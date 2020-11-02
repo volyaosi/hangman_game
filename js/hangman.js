@@ -57,4 +57,14 @@ class Hangman {
 
         this.calculateStatus();
     }
+
+    get incorrectLetters() {
+
+        const incorrectLetterArr = this.guessedLetters.map((letter) => {
+            if (!this.word.includes(letter)) {
+                return letter.toUpperCase();
+            }
+        });
+        return incorrectLetterArr;
+    }
 }

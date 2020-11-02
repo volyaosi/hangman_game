@@ -14,12 +14,19 @@
     </head>
     <body>
         <h1>Hangman</h1>
-        <div class="container">
+        <section class="container">
             <p class='intro'>Challenge yourself. Guess the word!</p>
             <div id="puzzle" class="puzzle"></div>
-            <p id="guesses"></p>
+
+            <div class="playboard-container">
+                <div id="guesses"></div>
+                <div id="incorrectLetters">Misses: </div> 
+                <div class="user-input">
+                    <label for="guessLetter">Enter letter:</label><input type="text" name="guessLetter">
+                </div>    
+            </div>
             <button id="reset" class="button">Reset</button>
-        </div>
+        </section>
        
         <script src="js/requests.js"></script>
         <script src="js/hangman.js"></script>
