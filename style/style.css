@@ -8,7 +8,7 @@ body {
     background: #2B292E;
     color: #fafafa;
     font-family: 'Lato', Arial, sans-serif;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 h1 {
@@ -31,21 +31,40 @@ h1 {
     margin: 0 auto;
     padding-top: 80px; 
     text-align: center;
+    position: relative;
+}
+.container::before {
+    content: 'Challenge yourself. Guess the word!';
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: fade-out 1s ease-out 1.6s both;
+    font-size: 22px;
+    letter-spacing: 0.4rem;
 }
 
-.intro {
+div {
+    margin-bottom: 20px;
+    letter-spacing: 0.4rem;
+}
+
+div, button {
+    animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
+}
+
+#guesses {
     font-size: 18px;
     padding-bottom: 70px;
-    
-}
-.playboard-container {
-    width: 300px;
-    text-align: left;
-    padding: 5px 15px;
 }
 
+.puzzle {
+    display: flex;
+    margin-bottom: 70px;
+}
 
-span {
+.puzzle span {
     border-bottom: 1px solid #534f59;
     display: inline-block;
     font-size: 30px;
@@ -57,32 +76,47 @@ span {
     width: 30px;   
 }
 
+.playboard-container {
+    width: 300px;
+    text-align: left;
+    padding: 5px 15px;
+}
+
+.missed-letters-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .user-input {
     display: flex;
     align-items: center;
 }
 
-.user-input input {
+.user-input input, .missed-letters-list {
     width: 55px;
     line-height: 1.8rem;
     border-radius: 20px;
     color: #FFF;
     background: #3a3640;
-    border: none; 
+    border: #3a3640 1px solid; 
     outline: none;
-    /* padding-left: 20px; */
     text-align: center;
     font-size: 20px;
 }
 
-div, p {
-    margin-bottom: 20px;
-    letter-spacing: 0.4rem;
+.missed-letters-list {
+    padding: 7px 12px;
+    text-align: center;
+    width: 140px;
+    height: 70px;
+    letter-spacing: 0.15rem;
+    margin: 0;
 }
 
-.puzzle {
-    display: flex;
-    margin-bottom: 70px;
+.user-input input:focus {
+    border: #6d4a79 1px solid; 
+    background: #4b4553;
 }
 
 .button {
@@ -103,7 +137,7 @@ div, p {
     color: #e0dbe8f7;
 }
 
-
+/* styles for tablets and smartphones */
 @media (max-height: 768px) {
     h1 {
         padding-top: 30px;
@@ -142,4 +176,28 @@ div, p {
         margin-bottom: 50px;
     }
 }
+
+/*animation */
+@keyframes scale-in-center {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+      height: 200px;
+    }
+    100% {
+      opacity: 0;
+      height: 0%
+    }
+  }
+  
 

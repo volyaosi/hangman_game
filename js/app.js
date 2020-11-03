@@ -1,6 +1,6 @@
 const puzzleEl = document.querySelector('#puzzle');
 const guessesEl = document.querySelector('#guesses');
-const mistakesEl = document.querySelector('#incorrectLetters');
+const mistakesEl = document.querySelector('.missed-letters-list');
 const userInput = document.querySelector('input');
 let game;
 
@@ -13,7 +13,7 @@ window.addEventListener('keypress', (e) => {
 const render = () => {
     puzzleEl.innerHTML = '';
     guessesEl.textContent = game.statusMessage;
-    mistakesEl.innerHTML = `Missed: ${game.incorrectLetters.join(" ")} `;
+    mistakesEl.innerHTML = game.incorrectLetters.join(" ");
     userInput.value = '';
 
     game.puzzle.split('').forEach((letter) => {

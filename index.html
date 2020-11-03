@@ -15,12 +15,14 @@
     <body>
         <h1>Hangman</h1>
         <section class="container">
-            <p class='intro'>Challenge yourself. Guess the word!</p>
+            <div id="guesses"></div>
             <div id="puzzle" class="puzzle"></div>
 
             <div class="playboard-container">
-                <div id="guesses"></div>
-                <div id="incorrectLetters">Misses: </div> 
+                <div class="missed-letters-wrapper">
+                    <span>Missed: </span>
+                    <div class="missed-letters-list"></div>
+                </div> 
                 <div class="user-input">
                     <label for="guessLetter">Enter letter:</label><input type="text" name="guessLetter">
                 </div>    
