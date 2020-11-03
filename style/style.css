@@ -151,7 +151,7 @@ div, button {
 @media (max-width: 500px) {
     h1 {
         font-size: 40px;
-        padding-top: 30px;
+        padding: 20px 0 10px;
     }
     
     .container {
@@ -162,7 +162,7 @@ div, button {
         text-align: center;
     }
     
-    .intro {
+    #guesses {
         font-size: 16px;
         padding-bottom: 50px;
     }
